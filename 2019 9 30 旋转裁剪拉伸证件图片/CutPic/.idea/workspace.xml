@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CutPic:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6bae5fbf-86d8-494e-9a3a-9624711abcee" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dabai/Cutp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dabai/Cutp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/.idea/libraries/lib.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/drawcontour.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/lib/opencv-320.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/lib/opencv_java320.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/out/production/drawcontour/findc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../drawcontour/src/findc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../fitthepicture/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../fitthepicture/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/.idea/artifacts/trycompile_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/out/artifacts/trycompile_jar/trycompile.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/out/production/trycompile/Ki.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/out/production/trycompile/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/src/Ki.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile/trycompile.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/.idea/libraries/trycompile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/lib/trybase64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/out/production/trycompile2/fg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/src/fg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile2/trycompile2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/lib/opencv-320.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/lib/trybase64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/out/production/trycompile3/tem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/src/tem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile3/trycompile3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/lib/CutPic.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/lib/opencv-320.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/out/production/trycompile4/kk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/src/kk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trycompile4/trycompile4.iml" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1RP3JUyu1MoAFS9YHA6BljWK7Jj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fitthepicture" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.1546841" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Cutp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dabai.Cutp" />
+      <module name="CutPic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dabai.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Cutp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bae5fbf-86d8-494e-9a3a-9624711abcee" name="Default Changelist" comment="" />
+      <created>1569554831603</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1569554831603</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CutPic$Cutp.ic" NAME="Cutp Coverage Results" MODIFIED="1569570198388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>dabai.*</FILTER>
+    </SUITE>
+  </component>
+</project>

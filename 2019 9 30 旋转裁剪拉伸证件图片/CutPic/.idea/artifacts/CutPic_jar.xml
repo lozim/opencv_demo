@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="CutPic:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CutPic_jar</output-path>
+    <root id="root">
+      <element id="archive" name="CutPic.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
+        </element>
+        <element id="module-output" name="CutPic" />
+        <element id="file-copy" path="$PROJECT_DIR$/lib/opencv_java320.dll" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/lib/opencv-320.jar" />
+    </root>
+  </artifact>
+</component>
