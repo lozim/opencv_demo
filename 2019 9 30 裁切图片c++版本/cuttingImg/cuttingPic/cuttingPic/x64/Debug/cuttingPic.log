@@ -1,0 +1,21 @@
+﻿  cuttingPic.cpp
+e:\opencv\build\include\opencv2\core\mat.hpp(2585): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\opencv\build\include\opencv2\core\persistence.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\opencv\build\include\opencv2\core\utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\opencv\build\include\opencv2\core\utility.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+e:\opencv\build\include\opencv2\imgproc.hpp(591): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+f:\code\cuttingimg\cuttingpic\cuttingpic\cuttingpic.cpp(118): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\code\cuttingimg\cuttingpic\cuttingpic\cuttingpic.cpp(128): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+f:\code\cuttingimg\cuttingpic\cuttingpic\cuttingpic.cpp(168): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+f:\code\cuttingimg\cuttingpic\cuttingpic\cuttingpic.cpp(190): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+f:\code\cuttingimg\cuttingpic\cuttingpic\cuttingpic.cpp(275): warning C4244: “*=”: 从“double”转换到“_Tp”，可能丢失数据
+          with
+          [
+              _Tp=float
+          ]
+f:\code\cuttingimg\cuttingpic\cuttingpic\cuttingpic.cpp(276): warning C4244: “*=”: 从“double”转换到“_Tp”，可能丢失数据
+          with
+          [
+              _Tp=float
+          ]
+  cuttingPic.vcxproj -> F:\code\cuttingImg\cuttingPic\x64\Debug\cuttingPic.exe
