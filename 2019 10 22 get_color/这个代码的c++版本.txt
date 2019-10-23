@@ -1,0 +1,197 @@
+
+#include "pch.h"
+#include <opencv2/opencv.hpp>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace cv;
+using namespace std;
+
+
+
+int main(int argc, char** argv) {
+
+	//函数写好了，用for做一个测试集
+
+	for (int i = 1; i < 31; i++) {
+
+		String read = "f:/te/" + to_string(i) + "_1.jpg";
+
+		Mat input = imread(read);
+		Mat hsv_input;
+		Mat des_im = input.clone();
+		cvtColor(input, hsv_input, COLOR_BGR2HSV);
+
+
+		int weight_step = input.size().width / 5;
+		int height_step = input.size().height / 5;
+
+		//求中心-二分之步长到达中心+二分之步长的众数,求一个颜色在前五个颜色和后五个颜色的区间里面计数最多，h值的范围是0-180；做一个0-180的数组
+
+		int h_count[181] = { 0 };//用来计数的数组
+		for (int i = input.size().width / 2 - weight_step; i < input.size().width / 2 + weight_step; i++)
+			for (int j = input.size().height / 2 - height_step; j < input.size().height / 2 + height_step; j++) {
+				h_count[static_cast<int>(hsv_input.at<Vec3b>(j, i)[0])]++;
+			}
+		int count_max = -1;
+		int count_index = 10;
+		for (int i = 0 + 10; i < 181 - 10; i++)
+		{
+			if ((h_count[i - 5] + h_count[i - 4] + h_count[i - 3] + h_count[i - 2] +
+				h_count[i - 1] + h_count[i] + h_count[i + 1] + h_count[i + 2] +
+				h_count[i + 3] + h_count[i + 4] + h_count[i + 5]) > count_max)
+			{
+				count_index = i;
+				count_max = (h_count[i - 5] + h_count[i - 4] + h_count[i - 3] + h_count[i - 2] +
+					h_count[i - 1] + h_count[i] + h_count[i + 1] + h_count[i + 2] +
+					h_count[i + 3] + h_count[i + 4] + h_count[i + 5]);
+			}
+
+		}
+
+		int xiaxian;
+		int shangxian;
+		if (count_index - 30 < 0)
+			xiaxian = 0;
+		else xiaxian = count_index - 30;
+		if (count_index + 30 > 180)
+			shangxian = 180;
+		else shangxian = count_index + 30;
+
+
+		Mat output = Mat::zeros(input.size(), CV_8UC1);
+
+
+		for (int i = 0; i < input.size().width; i++)
+			for (int j = 0; j < input.size().height; j++)
+			{
+				//cout << i << "     " << j << endl;
+				if (static_cast<int>(hsv_input.at<Vec3b>(j, i)[0]) > xiaxian && static_cast<int>(hsv_input.at<Vec3b>(j, i)[0]) < shangxian)
+					output.at<uchar>(j, i) = 255;
+				else output.at<uchar>(j, i) = 0;
+
+			}
+
+		//这里完成了二值化之后对output图像做findcontour
+
+		namedWindow("thresh", WINDOW_NORMAL);
+		imshow("thresh", output);
+	
+
+
+		Mat bin_output;
+		threshold(output, bin_output, 0, 255, CV_THRESH_OTSU);
+		Mat bin_clone = bin_output.clone();
+
+		vector<vector<Point>> contours;
+		vector<Vec4i> hirerachy;
+		findContours(bin_output, contours, hirerachy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+
+		//找到最大的contour把他外接矩形剪切出来
+		int max_index = 0;
+		int max_area = -1;
+		for (int i = 0; i < contours.size(); i++) {
+			if (contourArea(contours[i]) > max_area) {
+				max_area = contourArea(contours[i]);
+				max_index = i;
+			}
+		}
+
+		//drawContours(des_im, contours, max_index, Scalar(0, 255, 100), 10);
+
+
+
+
+		RotatedRect roc_rect = minAreaRect(contours[max_index]);
+		Mat transform_mat = getRotationMatrix2D(roc_rect.center, roc_rect.angle, 1.0);
+
+		int width = (int)roc_rect.size.width;
+		int height = (int)roc_rect.size.height;
+		Point center = roc_rect.center;
+		Mat rot_image = Mat::zeros(input.size(), input.type());
+		Mat rot_binary = Mat::zeros(bin_clone.size(), bin_clone.type());
+
+		warpAffine(input, rot_image, transform_mat, input.size());
+		warpAffine(bin_clone, rot_binary, transform_mat, input.size());
+
+		//ok 这里开始find rot_binary 的contours ，将他的最大contours用boundingrect包起来，然后取这个rect为roi提取出来。
+
+		findContours(rot_binary, contours, hirerachy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+
+		 max_index = 0;
+		 max_area = -1;
+		for (int i = 0; i < contours.size(); i++) {
+			if (contourArea(contours[i]) > max_area) {
+				max_area = contourArea(contours[i]);
+				max_index = i;
+			}
+		}
+
+		Rect ROI_rect =  boundingRect(contours[max_index]);
+		//ROI_rect.width
+		Mat imgROI = rot_image(ROI_rect);
+
+
+		//namedWindow("input", WINDOW_NORMAL);
+		//namedWindow("output", WINDOW_NORMAL);
+		//namedWindow("binary", WINDOW_NORMAL);
+
+		//imshow("binary", rot_binary);
+		//imshow("input", input);
+		//imshow("output", imgROI);
+		//waitKey(0);
+
+		/*int start_x;
+		int start_y;
+		int buchang_x = 0;
+		int buchang_y = 0;
+
+		if ((int)center.x - (width / 2) < 0) {
+			start_x = 0;
+			buchang_x = (int)((center.x - (width / 2))*2.8);
+		}
+		else start_x = (int)center.x - (width / 2);
+
+		if ((int)center.y - (height / 2) < 0) {
+			start_y = 0;
+			buchang_y = (int)((center.y - (height / 2))*2.8);
+		}
+		else start_y = (int)center.y - (height / 2);*/
+
+
+
+		String write = "f:/te/" + to_string(i) + "_2.jpg";
+		imwrite(write, imgROI);
+
+
+	}
+}
+
+
+
+
+int count_max = -1;
+            int count_index = 10;
+            for (int i = 0 + 10; i < 180 - 10; i++) {
+                if ((h_count[i - 10] + h_count[i - 9] + h_count[i - 8] + h_count[i - 7] +
+                        h_count[i - 6] +
+                        h_count[i - 5] + h_count[i - 4] + h_count[i - 3] + h_count[i - 2] +
+                        h_count[i - 1] + h_count[i] + h_count[i + 1] + h_count[i + 2] +
+                        h_count[i + 3] + h_count[i + 4] + h_count[i + 5] + h_count[i + 6]
+                        + h_count[i + 7] + h_count[i + 8] + h_count[i + 9] + h_count[i + 10]) > count_max) {
+                    count_index = i;
+                    count_max = (h_count[i - 10] + h_count[i - 9] + h_count[i - 8] + h_count[i - 7] +
+                            h_count[i - 6] +
+                            h_count[i - 5] + h_count[i - 4] + h_count[i - 3] + h_count[i - 2] +
+                            h_count[i - 1] + h_count[i] + h_count[i + 1] + h_count[i + 2] +
+                            h_count[i + 3] + h_count[i + 4] + h_count[i + 5] + h_count[i + 6]
+                            + h_count[i + 7] + h_count[i + 8] + h_count[i + 9] + h_count[i + 10]);
+                }
+
+            }
+			
+			
+			
+			static{ System.loadLibrary(Core.NATIVE_LIBRARY_NAME); }
+    
